@@ -6,6 +6,7 @@ public class moveMouse : MonoBehaviour {
 	public Transform player;
 	private Vector3 destination;
 	public float speed = 10f;
+	private Vector3 direction;
 
 	Rigidbody rbody;
 	// Use this for initialization
@@ -23,11 +24,12 @@ public class moveMouse : MonoBehaviour {
 
 			if (Input.GetMouseButtonDown (0)) {
 				destination = (cursorInfo.point);
-//				Vector3 moveDirection = destination - transform.position;
-//				moveDirection /= moveDirection.magnitude;
-//				rbody.AddForce (moveDirection * speed);
+
 
 			}
 		}
+		Vector3 moveDirection = destination - transform.position;
+		moveDirection /= moveDirection.magnitude;
+		rbody.AddForce (moveDirection * speed);
 	}
 }

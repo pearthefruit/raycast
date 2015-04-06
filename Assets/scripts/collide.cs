@@ -13,7 +13,7 @@ public class collide : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit, 10)){
-			if (hit.collider.gameObject.tag == "npc"){
+			if (hit.collider.gameObject.tag == "Player"){
 				Destroy (this.gameObject);
 			}
 		}
